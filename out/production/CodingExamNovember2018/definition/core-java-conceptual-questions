@@ -27,7 +27,7 @@ A. Object is a superclass.
 What is difference between path and classpath variables?
 A. PATH is the environment variable where we specify the locations of the jdk binaries, While a CLASSPATH
 What is the difference between an Interface and Abstract class?
-- A. Interface is used to
+A. Interface cannot have implementations while a abstract class can have abstract methods which can be implemented.
 Can you make an Object from an Interface and Abstract class ? if not how do you use it ?
 A. No, you have to extend an Abstract class and implement an interface to a concrete class.
 what is Access Specifier?
@@ -81,7 +81,9 @@ A. JDK is the main package that has all the java development tools including the
 What is the difference between JVM and JRE?
 A. JVM is responsible for executing/interpreting java project while JRE is the environment where a project is run.
 What is compile time and run time?
- - A. Runtime is the first stage a
+A. Compile time is when jvm takes a .java project and compiles it into a .class, it will compile regardless of errors
+   in the code. Runtime is the time when the compiler takes your java project and runs the program,
+   it will not work if there are even a single error.
 What is heap?
 A. Data area from which memory for all class instances and array are allocated.
 How java manage it's memory?
@@ -93,9 +95,10 @@ A. String is immutable while both a StringBuffer and a StringBuilder can be alte
 What is Singleton class?
 A. A type of class that is created so that only one instance of that class can be used.
 What is Serialization and Deserialization?
-A.
+A. Serialization is a mechanism of converting the state of an object into a byte stream,
+   Deserialization is the reverse process where the byte stream is used to recreate the actual java object in memory.
 when to use transient variable in java?
-A.
+A. At the time of serialization.
 Difference between while and do..while loop?
 A. Do while loop allows us to run the method once before the loop begins, while loops will only output as long as
    the condition of the loop is met.
@@ -108,35 +111,42 @@ A. An Integer because it is a class object.
 Why is String Immutable in Java?
 A. String variable can not be changed.
 What is constructor chaining in Java?
-
+A. Calling a constructor from a separate constructor.
 The difference between Serial and Parallel Garbage Collector?
-
+A. Serial Collector is a default copying collector which uses only one thread
+    While a parallel collector uses multiple threads.
 What is JIT stands for?
 A. Just-In-Time compiler.
 Explain Java Heap space and Garbage collection?
-
+A. When Heap is full garbage is collected,
+    objects that are no longer used are cleared making space for new objects.
 Can you guarantee the garbage collection process?
-
+A. No
 What is the difference between stack and heap in Java?
-
+A In heap and stack memory is responsible for holding references to heap objects
+      and for storing value types. Heap is the part of the memory stores the actual object
+      in memory.
 What is reflection in java and why is it useful?
-
+A. Ability to examine or modify the properties behavior of an object.
 what is multithreading in java?
-
+A. Executing more than one simultaneous programs at a time.
 What is the use of synchronization in Java?
-
+A. Provides mutually exclusive access toa shared resource with multiple threads in java.
 What is Framework?
-
+A. A collection of classes that provides the skeleton of a java project.
 What are the testing Framework available in java?
 A. testNG and JUnit are the most popular ones.
 Difference between jUnit and testNG?
-
+A. Both are open source testing framework used to writing and reading test, however;
+    Junit supports advance annotations, group test and allows different threads simultaneously
+    While testNG does not. JUnit is easier to use and user friendly.
 What are the dependencies for this project?
-
+A. mySQL connector, MongoDB connector, CsVReader, UnitTestConnectDB, ect.
 what is dependency injection in java?
-
+A. Technique whereby one object (or static method) supplies the dependencies of another object.
+    A dependency is an object that can be used (a service).
 What is static binding and dynamic binding?
-
+A. Static binding happens during compile time while dynamic binding happens during run time.
 
 
 

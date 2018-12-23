@@ -1,26 +1,41 @@
 Please answer the below Data Structure Questions:
 
 why do we need data structure?
-A.
+A. It is a way to organize and store data in a computer. Without data structures their would be no uniform way to
+    store, organize and manipulate data.
 What are the various operations that can be performed on different Data Structures?
+A. Add, remove, push, pull, sorting data, pop, peek,ect.
 List out the areas in which data structures are applied extensively?
+A. Compiler Design , OS, Database Management Systems Simulations, graphs, ect.
 what is an Array?
+A. Container object that holds a fix number of values.
 what is the difference between the Array and ArrayList?
+A. Array has a fixed number of index while an array list is dynamic and can grow/decrease.
 what is LinkedList?
+A. Linear data structure where the data is not stored is a contiguous location, every element of data is
+    a separate object.
 How is an Array different from Linked List?
+A. In a array each data is is independent and is stored in its own index while a linked list has its own data and
+   data address of a previous data. Stored  in a node based format.
 what is queue?
-A. Data structure that is entered in a
+A. Queue is a First-In-First-Out method of Data structure.
 what is stack?
-A.
+A. Stack is a Last-in-First-Out method of Data structure.
 what is FIFO and LIFO?
 A. FIFO(First In First Out)-First data inputted will be be the first to be removed.
    LIFO(Last In First Out)-Last data inputted will be be the first to be removed.
 what is the order of complexity?
+A.
 what is the best case to search an element from an array?
+A.
 what is the worst case to search an element from an array?
+A.
 what is tree in data structure?
+A.
 what is graph in data structure?
+A.
 what is the difference between the HashTable and HashMap?
+A.
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
 How HashMap works in java?
 What is ArrayIndexOutOfBoundsException in java? When it occurs?
