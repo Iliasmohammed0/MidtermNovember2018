@@ -9,8 +9,12 @@ what is the difference between the Array and ArrayList?
 what is LinkedList?
 How is an Array different from Linked List?
 what is queue?
+A. Queue is a First-In-First-Out method of Data structure.
 what is stack?
+A. Stack is a Last-in-First-Out method of Data structure.
 what is FIFO and LIFO?
+A. FIFO(First In First Out)-First data inputted will be be the first to be removed.
+   LIFO(Last In First Out)-Last data inputted will be be the first to be removed.
 what is the order of complexity?
 what is the best case to search an element from an array?
 what is the worst case to search an element from an array?
