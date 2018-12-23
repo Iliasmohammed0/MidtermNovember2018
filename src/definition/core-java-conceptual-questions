@@ -9,9 +9,13 @@ A. Itegrated Development Enviroment
 What are the IDEs available in the market to support java?
 Explain the entire java life cycle.
 what is class?
+A. 
 What is object?
+A. Instance of a class
 What is the entry point of an application?
+A. Main Method
 Why main is static?
+A.
 Which class is the superclass of all classes?
 What is difference between path and classpath variables?
 What is the difference between an Interface and Abstract class?
@@ -32,6 +36,7 @@ If we don't have a constructor declared, what is called during the object creati
 What is "this" keyword in java ?
 What is "super" keyword in java? How many possible way can you use?
 What is JVM stand for ?
+A. Java Virtual Machine
 Is JVM platform independent?
 What version of java are you using?
 What is JAR stand for ?
