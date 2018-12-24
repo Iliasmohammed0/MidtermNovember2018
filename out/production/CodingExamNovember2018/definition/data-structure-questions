@@ -25,11 +25,11 @@ what is FIFO and LIFO?
 A. FIFO(First In First Out)-First data inputted will be be the first to be removed.
    LIFO(Last In First Out)-Last data inputted will be be the first to be removed.
 what is the order of complexity?
-A.
+A. How the time to perform the algorithm grows with the size of the input.
 what is the best case to search an element from an array?
-A.
+A. 0(1)
 what is the worst case to search an element from an array?
-A.
+A. 0(n)
 what is tree in data structure?
 A. A tree is a data structure made up of nodes organized in a hierarchical relationship.
 what is graph in data structure?
@@ -39,13 +39,13 @@ A. Main difference between the two is hashtable is synchronized while a hashmap 
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
 A. RDBMS - Arrays, Network data model - graphs, Hierarchical data model uses Tress.
 How HashMap works in java?
-A.
+A. Allows us to store object and retrieve it in constant time only if we know the key.
 What is ArrayIndexOutOfBoundsException in java? When it occurs?
-A.
+A. Indicates that we are trying to access array element with an illegal index.
 What are the different ways of copying an array into another array?
-A.
+A. There are 4 ways to do this. Manually, Arrays.copyOf(), System.arraycopy(), object.clone().
 What is difference between an array and a linked list?
-A.
+A. Array is a defined and has a fix number of index, linked list, like an arraylist is dynamic.
 What is DFS and BFS?
 A. Depth-First Search is an algorithm for traversing a tree or graph, starts and the root and explores each branch in-depth,
    Breadth First Search expands the root node first than the successors of the root node are expanded t find the best possible
@@ -57,13 +57,19 @@ A. Linear data structures are organized in a simple linear way which is less com
    Linear data structures are Arrays, LinkedList, Stack and Queue, In Non-Linear every data item is attached to several
    other data items in a way that is specific for reflecting relationships
 What is Big-(O)-notation?
-A.
+A. Describes the worst-case scenario, and can be used to describe the execution time required to execute an algorithm.
 Outlined different kind of sorting algorithm with time complexity?
-A.
+A. Bubble sort, insertion sort heap sort.
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
   a)In terms of Accessing element.
   b)In terms of Inserting element.
   c)In terms of Searching element.
   d)In terms of Removing element.
-
-
+Data Structures                   Advantages                                               DisAdvantages
+              Accessing    Inserting    Searching    Removing              Accessing    Inserting   Searching   Removing
+Array
+Stack
+Queue
+LinkedList
+Tree
+HashMap
