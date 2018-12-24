@@ -31,22 +31,35 @@ A.
 what is the worst case to search an element from an array?
 A.
 what is tree in data structure?
-A.
+A. A tree is a data structure made up of nodes organized in a hierarchical relationship.
 what is graph in data structure?
-A.
+A. A non-linear data structures that are organized in nodes, each node in a graph has connection to any nodes in the graph.
 what is the difference between the HashTable and HashMap?
-A.
+A. Main difference between the two is hashtable is synchronized while a hashmap is not.
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
+A. RDBMS - Arrays, Network data model - graphs, Hierarchical data model uses Tress.
 How HashMap works in java?
+A.
 What is ArrayIndexOutOfBoundsException in java? When it occurs?
+A.
 What are the different ways of copying an array into another array?
+A.
 What is difference between an array and a linked list?
+A.
 What is DFS and BFS?
+A. Depth-First Search is an algorithm for traversing a tree or graph, starts and the root and explores each branch in-depth,
+   Breadth First Search expands the root node first than the successors of the root node are expanded t find the best possible
+   path to the data you are searching for.
 What is Recursion?
+A. Calling one function from another immediately calling itself.
 What are linear and non linear data Structures?
+A. Linear data structures are organized in a simple linear way which is less complex and takes up less space.
+   Linear data structures are Arrays, LinkedList, Stack and Queue, In Non-Linear every data item is attached to several
+   other data items in a way that is specific for reflecting relationships
 What is Big-(O)-notation?
+A.
 Outlined different kind of sorting algorithm with time complexity?
-
+A.
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
   a)In terms of Accessing element.
   b)In terms of Inserting element.

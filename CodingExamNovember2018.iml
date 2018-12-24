@@ -16,7 +16,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/mysql-connector-java-5.1.41-bin.jar!/" />
@@ -64,5 +64,15 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="mysql-connector-java-6.0.6-bin" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/driver/mysql-connector-java-6.0.6-bin.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="mysql-connector-java-6.0.6-bin1" level="project" />
   </component>
 </module>
