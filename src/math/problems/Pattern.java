@@ -8,8 +8,14 @@ public class Pattern {
 		 *
 		 *
 		 */
-		
-
-
+		for (int a = 100; a >= 90; a--) {
+			System.out.println(a);
+		}
+		for (int b = 90; b >= 70; b -= 2) {
+			System.out.println(b);
+		}
+		for (int b = 70; b >= 40; b -= 3) {
+			System.out.println(b);
+		}
 	}
 }
