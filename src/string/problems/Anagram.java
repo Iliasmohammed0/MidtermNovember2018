@@ -10,6 +10,5 @@ public class Anagram {
         //same character but in different order.For example,"CAT" and "ACT", "ARMY" and "MARY".
     String word1;
     String word2;
-
     }
 }

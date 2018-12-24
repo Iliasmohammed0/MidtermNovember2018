@@ -63,7 +63,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="mysql-connector-java-6.0.6-bin" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-6.0.6-bin" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -73,6 +73,5 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="mysql-connector-java-6.0.6-bin1" level="project" />
   </component>
 </module>

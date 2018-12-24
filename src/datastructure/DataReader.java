@@ -1,11 +1,15 @@
 package datastructure;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 public class DataReader {
 
 	public static void main(String[] args) {
 		/*
 		 * User API to read the below textFile and print to console.
-		 * Use BufferedReader class. 
+		 * Use BufferedReader class.
 		 * Use try....catch block to handle Exception.
 		 *
 		 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
@@ -17,11 +21,23 @@ public class DataReader {
 		 * Demonstrate how to use Stack that includes push,peek,search,pop elements.
 		 * Use For Each loop/while loop/Iterator to retrieve data.
 		 */
-
-		String textFile = System.getProperty("user.dir") + "/src/data/self-driving-car.txt";
-
-
-
+		String textFile = "C:/PNTNY/MidtermNovember2018/src/data/self-driving-car";
+		BufferedReader br = null;
+		FileReader fr = null;
+		try {
+			fr = new FileReader(textFile);
+			System.out.println("Found File");
+		} catch (FileNotFoundException e) {
+			System.out.println("File was not found...");
+		}
+		String data = "";
+		try {
+			br = new BufferedReader(fr);
+			while ((data = br.readLine())!= null) {
+				System.out.println(data);
+			}
+		} catch (Exception ex) {
+			System.out.println("Not able to read file...");
+		}
 	}
-
 }

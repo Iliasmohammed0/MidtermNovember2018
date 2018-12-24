@@ -14,7 +14,6 @@ public class Factorial {
         System.out.println("Using Recursion to to find factor of 5: " + factorialIncursion(5));
         System.out.println("Using Iteration to find factor of 5: " + factorialIteration(5));
     }
-
     //iterator
     public static int factorialIteration(int a) {
         int result = 1, i = 1;
@@ -24,7 +23,6 @@ public class Factorial {
         }
         return result;
     }
-
     //Recursion
     public static int factorialIncursion(int a) {
         if (a <= 1) {
