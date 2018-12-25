@@ -12,5 +12,16 @@ public class Permutation {
          * Write Java program to compute all Permutation of a String
          *
          */
+        permutation("", "abc");
+    }
+    public static  void permutation(String a, String b){
+        int c = b.length();
+        if(c==0) {
+            System.out.println(a);
+        }else{
+            for(int d=0;d<c;d++){
+                permutation(a + b.charAt(d), b.substring(0,d)+ b.substring(d+1,c));
+            }
+        }
     }
 }
