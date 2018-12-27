@@ -1,6 +1,6 @@
 package design;
 
-public class FortuneEmployee {
+public class FortuneEmployee{
 
 	/**
 	 * FortuneEmployee class has a main methods where you will be able to create Object from
@@ -14,7 +14,8 @@ public class FortuneEmployee {
 	 *
 	 **/
 	public static void main(String[] args) {
-		
+		EmployeeInfo employee1 = new EmployeeInfo(1111,"Ilias", "HR", 12/1/2011, 12000);
+		employee1.calculateEmployeeBonus(5, 12000);
 
 
 	}
