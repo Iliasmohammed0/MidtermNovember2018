@@ -1,4 +1,5 @@
 package design;
+import java.util.Date;
 
 public class FortuneEmployee{
 
@@ -14,9 +15,8 @@ public class FortuneEmployee{
 	 *
 	 **/
 	public static void main(String[] args) {
-		EmployeeInfo employee1 = new EmployeeInfo(1111,"Ilias", "HR", 12/1/2011, 12000);
-		employee1.calculateEmployeeBonus(5, 12000);
-
+		EmployeeInfo employee1 = new EmployeeInfo(1111,"Ilias", "HR", "1/21/11", 12000);
+		System.out.println(employee1.calculateEmployeeBonus(5,12000));
 
 	}
 

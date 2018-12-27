@@ -25,7 +25,7 @@ public class EmployeeInfo extends AbstractEmployee implements  Employee {
 	private String department;
 	private int salary;
 	private int benefitLayout;
-	private long joiningDate;
+	private String joiningDate;
 	private static String companyName;
 
 	public int getEmployeeID() {
@@ -68,11 +68,11 @@ public class EmployeeInfo extends AbstractEmployee implements  Employee {
 		this.benefitLayout = benefitLayout;
 	}
 
-	public long getJoiningDate() {
+	public String getJoiningDate() {
 		return joiningDate;
 	}
 
-	public void setJoiningDate(long joiningDate) {
+	public void setJoiningDate(String joiningDate) {
 		this.joiningDate = joiningDate;
 	}
 
@@ -95,13 +95,15 @@ public class EmployeeInfo extends AbstractEmployee implements  Employee {
 	 * Must implement below constructor.
 	 */
 
-	public EmployeeInfo(int employeeID, String employeeName, String department, long joiningDate, int salary) {
+	public EmployeeInfo(int employeeID, String employeeName, String department, String joiningDate, int salary) {
 
 		this.employeeName = employeeName;
 		this.department = department;
 		this.department = department;
 		this.joiningDate = joiningDate;
 		this.salary = salary;
+		System.out.println("EmpID: "+ employeeID+"\nEmpName: "+employeeName+"\nDepart:" +department+"\nStartDate: "
+				+ joiningDate+"\nSalary "+salary);
 	}
 
 	public EmployeeInfo(String name, int employeeId) {
