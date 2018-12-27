@@ -1,5 +1,19 @@
 package json.parser;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+
 public class CnnAPI {
     /*
       You can get API_KEY from this below link. Once you have the API_KEY, you can fetch the top-headlines news.
@@ -9,6 +23,7 @@ public class CnnAPI {
       https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=YOUR_API_KEY
 
       MY_API_KEY=0d9e35dfa3c140aab8bf9cdd70df957f
+      Ilias API Key 8931e08bdb0346b48634c85c88b7be92
 
       After getting Json Format of the news, You can go to json validator link: https://jsonlint.com/ to see
       how it can be parsed.
@@ -37,4 +52,34 @@ public class CnnAPI {
 	   Store into choice of your database and retrieve.
 
      */
+    public static void main(String[] args) throws MalformedURLException, IOException {
+        String sURL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=8931e08bdb0346b48634c85c88b7be92";
+        News news = null;
+        List<News> newsList = new ArrayList<>();
+        URL url = new URL(sURL);
+        URLConnection request = url.openConnection();
+        request.connect();
+        JsonArray jsonArray = null;
+        JsonParser jp = new JsonParser();
+        JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+        if (root instanceof JsonObject) {
+            JsonObject rootObj = root.getAsJsonObject();
+        } else if (root instanceof JsonArray) {
+            jsonArray = root.getAsJsonArray();
+        }
+        for( int i = 0; i<jsonArray.size () - 1; i++){
+            try {
+                JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
+                String title = jsonobject.get("title").toString();
+                String author = jsonobject.get("author").toString();
+                String description = jsonobject.get("description").toString();
+                String article = jsonobject.get("article").toString();
+                news = new News(title, author, description, article);
+                newsList.add(news);
+            } catch (Exception ex){}
+        }
+        for (News entry : newsList) {
+           System.out.println(entry.getTitle() + " " + entry.getAuthor() + " " + entry.getDescription() + " " + entry.getArticle());
+        }
+    }
 }
