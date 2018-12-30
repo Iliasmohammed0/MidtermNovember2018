@@ -18,6 +18,12 @@ public class FortuneEmployee{
 		EmployeeInfo employee1 = new EmployeeInfo(1111,"Ilias", "HR", "1/21/11", 12000);
 		System.out.println(employee1.calculateEmployeeBonus(5,12000));
 
+		EmployeeInfo employee2 = new EmployeeInfo(1001,"Mohammed", "CEO", "5/23/08", 22000);
+		System.out.println(employee1.calculateEmployeeBonus(8,22000));
+
+		EmployeeInfo employee3 = new EmployeeInfo(2222,"Shumi", "Finance", "2/21/10", 90000);
+		System.out.println(employee1.calculateEmployeeBonus(6,90000));
+
 	}
 
 }
