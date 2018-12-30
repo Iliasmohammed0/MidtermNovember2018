@@ -8,12 +8,10 @@ import com.google.gson.JsonParser;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
-
 public class CnnAPI {
     /*
       You can get API_KEY from this below link. Once you have the API_KEY, you can fetch the top-headlines news.
@@ -52,36 +50,52 @@ public class CnnAPI {
 	   Store into choice of your database and retrieve.
 
      */
-    public static void main(String[] args) throws MalformedURLException, IOException {
+    public static void main(String[] args) throws IOException {
         String sURL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=8931e08bdb0346b48634c85c88b7be92";
         News news = null;
         List<News> newsList = new ArrayList<>();
-        URL url = new URL(sURL);
-        URLConnection request = url.openConnection();
+        URL url0 = new URL(sURL);
+        URLConnection request = url0.openConnection();
         request.connect();
         JsonArray jsonArray = null;
         JsonParser jp = new JsonParser();
         JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+        JsonObject rootObj=null;
         if (root instanceof JsonObject) {
-            JsonObject rootObj = root.getAsJsonObject();
+            rootObj = root.getAsJsonObject();
         } else if (root instanceof JsonArray) {
             jsonArray = root.getAsJsonArray();
         }
-      for( int i = 0; i<jsonArray.size () - 1; i++){
+        if(jsonArray==null) {
+            jsonArray = rootObj.getAsJsonArray("articles");}
+      for( int i = 0; i<jsonArray.size()-1; i++){
             try {
                 JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
                 String title = jsonobject.get("title").toString();
                 String author = jsonobject.get("author").toString();
                 String description = jsonobject.get("description").toString();
-                String article = jsonobject.get("article").toString();
-                news = new News(title, author, description, article);
+                String url = jsonobject.get("url").toString();
+                String urlToImage = jsonobject.get("urlToImage").toString();
+                String publishedAt = jsonobject.get("publishedAt").toString();
+                String source = jsonobject.get("source").toString();
+                String content = jsonobject.get("content").toString();
+
+                news = new News(source,url,publishedAt,content,urlToImage,author,description,title);
                 newsList.add(news);
             } catch (Exception ex){
 
             }
         }
         for (News entry : newsList) {
-           System.out.println(entry.getTitle() + " " + entry.getAuthor() + " " + entry.getDescription() + " " + entry.getArticle());
+            System.out.println("Title: " +entry.getTitle());
+            System.out.println("Author: "+ entry.getAuthor());
+            System.out.println("PublishedAt: "+ entry.getPublishedAt());
+            System.out.println("url: "+ entry.getUrl());
+            System.out.println("Source: "+ entry.getSource());
+            System.out.println("Description: " + entry.getDescription());
+            System.out.println("Content: "+ entry.getContent());
+            System.out.println("UrlToImage: "+ entry.getUrlToImage());
+            System.out.println("");
         }
     }
 }
