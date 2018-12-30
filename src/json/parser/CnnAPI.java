@@ -67,7 +67,7 @@ public class CnnAPI {
         } else if (root instanceof JsonArray) {
             jsonArray = root.getAsJsonArray();
         }
-        for( int i = 0; i<jsonArray.size () - 1; i++){
+      for( int i = 0; i<jsonArray.size () - 1; i++){
             try {
                 JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
                 String title = jsonobject.get("title").toString();
@@ -76,7 +76,9 @@ public class CnnAPI {
                 String article = jsonobject.get("article").toString();
                 news = new News(title, author, description, article);
                 newsList.add(news);
-            } catch (Exception ex){}
+            } catch (Exception ex){
+
+            }
         }
         for (News entry : newsList) {
            System.out.println(entry.getTitle() + " " + entry.getAuthor() + " " + entry.getDescription() + " " + entry.getArticle());
