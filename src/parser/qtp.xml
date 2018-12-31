@@ -12,7 +12,7 @@
   </student>
   <student id="3">
     <firstName>Apurba</firstName>
-    <lastName>"Shah"</lastName>
+    <lastName>Shah</lastName>
     <score>80</score>
   </student>
   <student id="4">
@@ -22,7 +22,7 @@
   </student>
   <student id="5">
     <firstName>Savin</firstName>
-    <lastName>"Chow"</lastName>
+    <lastName>Chow</lastName>
     <score>100</score>
   </student>
 </StudentInfo>
