@@ -4,6 +4,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import databases.ConnectToMongoDB;
+import databases.ConnectToSqlDB;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -60,15 +62,16 @@ public class CnnAPI {
         JsonArray jsonArray = null;
         JsonParser jp = new JsonParser();
         JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
-        JsonObject rootObj=null;
+        JsonObject rootObj = null;
         if (root instanceof JsonObject) {
             rootObj = root.getAsJsonObject();
         } else if (root instanceof JsonArray) {
             jsonArray = root.getAsJsonArray();
         }
-        if(jsonArray==null) {
-            jsonArray = rootObj.getAsJsonArray("articles");}
-      for( int i = 0; i<jsonArray.size()-1; i++){
+        if (jsonArray == null) {
+            jsonArray = rootObj.getAsJsonArray("articles");
+        }
+        for (int i = 0; i < jsonArray.size() - 1; i++) {
             try {
                 JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
                 String title = jsonobject.get("title").toString();
@@ -80,22 +83,24 @@ public class CnnAPI {
                 String source = jsonobject.get("source").toString();
                 String content = jsonobject.get("content").toString();
 
-                news = new News(source,url,publishedAt,content,urlToImage,author,description,title);
+                news = new News(source, url, publishedAt, content, urlToImage, author, description, title);
                 newsList.add(news);
-            } catch (Exception ex){
+            } catch (Exception ex) {
 
             }
         }
         for (News entry : newsList) {
-            System.out.println("Title: " +entry.getTitle());
-            System.out.println("Author: "+ entry.getAuthor());
-            System.out.println("PublishedAt: "+ entry.getPublishedAt());
-            System.out.println("url: "+ entry.getUrl());
-            System.out.println("Source: "+ entry.getSource());
+            System.out.println("Title: " + entry.getTitle());
+            System.out.println("Author: " + entry.getAuthor());
+            System.out.println("PublishedAt: " + entry.getPublishedAt());
+            System.out.println("url: " + entry.getUrl());
+            System.out.println("Source: " + entry.getSource());
             System.out.println("Description: " + entry.getDescription());
-            System.out.println("Content: "+ entry.getContent());
-            System.out.println("UrlToImage: "+ entry.getUrlToImage());
+            System.out.println("Content: " + entry.getContent());
+            System.out.println("UrlToImage: " + entry.getUrlToImage());
             System.out.println("");
         }
+        ConnectToMongoDB connectToMongoDB = new ConnectToMongoDB();
+       //connectToMongoDB.insertIntoMongoDB()
     }
 }

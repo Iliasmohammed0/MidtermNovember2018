@@ -61,7 +61,7 @@ public class Numbers {
 		randomize (num, nBS);
 
 		//MergeSort
-		algo.mergeSort(num);
+		algo.mergeSort(num, 0 ,  n-1);
 		long mergeSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in Merge Sort take: " + mergeSortExecutionTime + " milli sec");
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "merge_sort", "SortingNumbers");

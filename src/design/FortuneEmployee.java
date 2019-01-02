@@ -24,6 +24,14 @@ public class FortuneEmployee{
 		EmployeeInfo employee3 = new EmployeeInfo(2222,"Shumi", "Finance", "2/21/10", 90000);
 		System.out.println(employee1.calculateEmployeeBonus(6,90000));
 
+		EmployeeInfo daysOff = new EmployeeInfo();
+		daysOff.setBonusPaidLeave(36);
+		daysOff.setHolidaysLeaves(40);
+		daysOff.setSickDays(120);
+		daysOff.setVacationDays(80);
+		System.out.println("\nNumber of hours of Bonus Paid leave: " + daysOff.getBonusPaidLeave()+"hrs");
+		System.out.println("\nNumber of hours of Holiday Paid leave: " + daysOff.getHolidaysLeaves()+"hrs");
+		System.out.println("\nNumber of hours of Sick leave: " + daysOff.getSickDays()+"hrs");
+		System.out.println("\nNumber of hours of Vacation Paid leave: " + daysOff.getVacationDays()+"hrs");
 	}
-
 }

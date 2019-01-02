@@ -3,6 +3,10 @@ package datastructure;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
 
 public class DataReader {
 
@@ -24,20 +28,38 @@ public class DataReader {
 		String textFile = "C:/PNTNY/MidtermNovember2018/src/data/self-driving-car";
 		BufferedReader br = null;
 		FileReader fr = null;
+		String store = "";
+		String data = "";
 		try {
 			fr = new FileReader(textFile);
 			System.out.println("Found File");
 		} catch (FileNotFoundException e) {
 			System.out.println("File was not found...");
 		}
-		String data = "";
 		try {
 			br = new BufferedReader(fr);
 			while ((data = br.readLine())!= null) {
 				System.out.println(data);
+				store += data;
 			}
 		} catch (Exception ex) {
 			System.out.println("Not able to read file...");
+		}
+		String[] array = store.split(" ");
+		Stack<String> stack = new Stack<>();
+		List<String> list  =new LinkedList<>();
+
+		for(String a:array){
+			list.add(a);
+			stack.push(a); }
+		System.out.println("\nLink FIFO: ");
+		Iterator<String> it = list.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next()+" ");
+		}
+		System.out.println("\nStack LIFO: ");
+		while(!stack.isEmpty()){
+			System.out.println(stack.pop() + " ");
 		}
 	}
 }

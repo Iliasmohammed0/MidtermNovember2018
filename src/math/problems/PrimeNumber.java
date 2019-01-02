@@ -33,6 +33,7 @@ public class PrimeNumber {
 		sql.readDataBase("PrimeNumber", "Numbers");
 		ConnectToMongoDB connectToMongoDB = new ConnectToMongoDB();
 		connectToMongoDB.insertIntoMongoDB(list,"PrimeNumbers");
+		connectToMongoDB.readStudentListFromMongoDB("PrimeNumbers");
 	}
 }
 

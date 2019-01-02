@@ -36,14 +36,14 @@ public class ProcessStudentInfo {
 		 *
 		 */
 
-			public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+			public static void main(String[] args) throws Exception {
 				//Path of XML data to be read.
 				//String pathSelenium  = System.getProperty("C:/PNTNY/MidtermNovember2018/src/selenium.xml");
 				String pathSelenium = System.getProperty("user.dir")+"/src/parser/selenium.xml";
 				String pathQtp = System.getProperty("user.dir")+"/src/parser/qtp.xml";
 				//String pathQtp = System.getProperty("C:/PNTNY/MidtermNovember2018/src/parser/qtp.xml");
 				String tag = "id";
-                //Create ConnectToSqlDB Object
+				//Connecting to mongoDB
 				ConnectToMongoDB connectToMongoDB = new ConnectToMongoDB();
 				//Declare a Map with List<String> into it.
 				Map<String,List<Student>> list = new LinkedHashMap<String,List<Student>>();
@@ -83,23 +83,22 @@ public class ProcessStudentInfo {
 				}
 				//Store Qtp data into Qtp table in Database
 				connectToMongoDB.insertIntoMongoDB(qtpStudents,"qtp");
-				//connectToSqlDB.insertDataFromArrayListToMySql(seleniumStudents, "qtp","studentList");
-				//ConnectToSqlDB sql = new ConnectToSqlDB();
-				//sql.insertDataFromArrayListToSqlTable(seleniumStudents,"qtp","studentList" );
 				//Store Selenium data into Selenium table in Database
 				connectToMongoDB.insertIntoMongoDB(seleniumStudents,"selenium");
 				//Retrieve Qtp students from Database
                List<Student> stList = connectToMongoDB.readStudentListFromMongoDB("qtp");
                for(Student st:stList){
-               	  System.out.println(st.getFirstName()+" "+st.getLastName()+" "+st.getScore()+" "+st.getId());
-			   }
-
+               	  System.out.println(st.getFirstName()+" "+st.getLastName()+" "+st.getScore()+" "+st.getId()); }
 			   //Retrieve Selenium students from Database
 				List<Student> stList1 = connectToMongoDB.readStudentListFromMongoDB("selenium");
 				for(Student st:stList1){
 					System.out.println(st.getFirstName()+" "+st.getLastName()+" "+st.getScore()+" "+st.getId());
 				}
-
+				ConnectToSqlDB sql = new ConnectToSqlDB();
+				sql.insertDataFromArrayListToSqlTable(seleniumStudents,"selenium","studentList" );
+				sql.insertDataFromArrayListToSqlTable(qtpStudents,"qtp","studentList" );
+				sql.readDataBase("selenium", "studentList");
+				sql.readDataBase("qtp", "studentList");
 			}
 
 }

@@ -67,9 +67,9 @@ Draw a table with time complexity in which it will summarize all the data struct
   d)In terms of Removing element.
 Data Structures                   Advantages                                               DisAdvantages
               Accessing    Inserting    Searching    Removing              Accessing    Inserting   Searching   Removing
-Array
-Stack
-Queue
-LinkedList
-Tree
-HashMap
+Array            ∅(1)          ∅(n)     ∅(n)        ∅(n)                    ∅(1)        ∅(n)         ∅(n)      ∅(n)
+Stack            ∅(n)          ∅(n)     ∅(1)        ∅(1)                    ∅(n)        ∅(n)         ∅(1)      ∅(1)
+Queue            ∅(n)          ∅(n)     ∅(1)        ∅(1)                    ∅(n)        ∅(n)         ∅(1)      ∅(1)
+LinkedList       ∅(n)          ∅(n)     ∅(1)        ∅(1)                    ∅(n)        ∅(n)         ∅(1)      ∅(1)
+Tree            ∅(log(n))   ∅(log(n))  ∅(log(n)   ∅(log(n))                 ∅(n)        ∅(n)         ∅(n)      ∅(n)
+HashMap           n/a           ∅(1)     ∅(1)        ∅(1)                    n/a         ∅(n)         ∅(n)      ∅(n)
